@@ -1,10 +1,14 @@
 package ducnhu.eshopmini.service;
 
-import ducnhu.eshopmini.model.Category;
 
-import java.util.List;
+import ducnhu.eshopmini.payload.CategoryDTO;
+import ducnhu.eshopmini.payload.CategoryResponse;
 
 public interface CategoryService {
-    List<Category> getAllCategories();
-    void createCategory(Category category);
+    CategoryResponse getAllCategories(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
+    CategoryDTO createCategory(CategoryDTO categoryDTO);
+
+    CategoryDTO deleteCategory(Long categoryId);
+
+    CategoryDTO updateCategory(CategoryDTO categoryDTO, Long categoryId);
 }
